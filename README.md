@@ -1,3 +1,8 @@
+# angular-react-poc
+POC for using React Components in Angular.
+
+## Introduction
+
 [Angular](https://angularjs.org/) and performance.
 
 When you do a Google [search](https://www.google.com/search?q=angular+performance) of these two words together, what you get it most likely [blog](http://www.williambrownstreet.net/blog/2013/07/angularjs-my-solution-to-the-ng-repeat-performance-problem/) [posts](https://www.airpair.com/angularjs/posts/angularjs-performance-large-applications) about [fixing performance issues](http://blog.scalyr.com/2013/10/angularjs-1200ms-to-35ms/) or [ways to avoid pitfalls](http://www.alexkras.com/11-tips-to-improve-angularjs-performance/). Theres no hiding the fact that the not-so-secret secret of Angular is that it is slow. Anyone who has ever done a big Angular application or even writing an [`ng-repeat`](https://docs.angularjs.org/api/ng/directive/ngRepeat) inside an `ng-repeat` can attest to it's slowness.
