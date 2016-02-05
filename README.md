@@ -8,8 +8,12 @@ POC for using React Components in Angular.
 
 ### Angular performance:
 
-![http://imgur.com/fR4kamD](http://imgur.com/fR4kamD)
+Sample case is `311.315ms`
+
+![311.315ms](https://raw.github.com/chrisrng/angular-react-poc/master/images/angular-only.png)
 
 ### Angular + React performance:
 
-![http://imgur.com/qINnmbU](http://imgur.com/qINnmbU)
+Sample case is `81.435ms`
+
+![81.435ms](https://raw.github.com/chrisrng/angular-react-poc/master/images/angular-react.png)
