@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Angular | Pascal's Triangle</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <style>
+    * {
+      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !important; 
+      font-weight: 300;
+      font-size: 14px;
+    }
+    .row {
+      text-align: center;
+      overflow: hidden;
+      height: 1.1428rem;
+    }
+    .cell {
+      margin: 0 5px;
+    }
+  </style>
+</head>
+
+<body ng-app="myApp">
+  <h1>AngularJS</h1>
+  <div ng-controller="myController">
+    <button ng-click="load(10)">Load 10</button><button ng-click="load(50)">Load 50</button><button ng-click="load(100)">Load 100</button><button ng-click="load(250)">Load 250</button><button ng-click="load(500)">Load 500</button>
+    <br /><br />
+    <angular-pascal-triangle data="data"></angular-pascal-triangle>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+  <script>
+  'use strict';
+  angular.module('myApp', []).
+    controller('myController', ['$scope', '$timeout', function($scope, $timeout) {
+      $scope.data = [];
+
+      $scope.load = function(rows) {
+        window.performance.mark('start');
+
+        // Override
+        const n = window.n || rows;
+
+        // Fill data with pascal's triangle
+        const data = [];
+        data[0] = [1];
+        data[1] = [1, 1];
+
+        for (let row = 2; row < n; row++) {
+          data[row] = [1];
+
+          for (let col = 1; col <= row - 1; col++) {
+            const prevRow = data[row - 1];
+            data[row][col] = prevRow[col] + prevRow[col - 1];
+            data[row].push(1);
+          }
+        }
+
+        // Update pascal's triangle data
+        $scope.data = data;
+
+        // Check time after render
+        $timeout(function() {
+          window.performance.mark('end');
+          window.performance.measure('rendered', 'start', 'end');
+          console.log(window.performance.getEntriesByType('measure').map(p => p.duration));
+        }, 0, false);
+      }
+
+      // Default load
+      $scope.load(100);
+    }]).directive('angularPascalTriangle', function() {
+      return {
+        restrict: 'E',
+        scope: {
+          data: '='
+        },
+        template: `
+          <section>
+            <div class="row" ng-repeat="row in data track by $index">
+              <span class="cell" ng-repeat="col in row track by $index">{{col}}</span>
+            </div>
+          </section>
+        `
+      }
+    });
+  </script>
+</body>
+
+</html>
