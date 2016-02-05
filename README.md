@@ -7,11 +7,11 @@ Use `window.performance` from the [User Timing API](https://www.w3.org/TR/hr-tim
 
 Trigger a start mark on the `scope.load` function call.
 
-Trigger an end mark on the `$timeout` call to mark the end of an Angular render and hook into `componentDidMount` to mark the end of a React render.
+Trigger an end mark on the `$timeout` call to mark the end of an Angular render or hook into `componentDidMount` to mark the end of a React render.
 
 ### Setup:
 - When an HTML is launched, it automatically does a load of 100 rows of pascal's triangle.
-- Everytime you click on a "Load X" button, it does a performance mark of loading a new pascal's triangle on top of the old one with X rows.
+- Every time you click on a "Load X" button, it does a performance mark of loading a new pascal's triangle on top of the old one with X rows.
 - Thus if repeatedly clicking on the same "Load X" button, the time it takes to render is significantly less (because of the virtual dom or using track by)
 
 ## Results
