@@ -3,13 +3,15 @@ POC for using React Components in Angular.
 
 ## Introduction
 
+Sourced from: [http://chrisrng.svbtle.com/angular-react-performance](http://chrisrng.svbtle.com/angular-react-performance).
+
 [Angular](https://angularjs.org/) and performance.
 
-When you do a Google [search](https://www.google.com/search?q=angular+performance) of these two words together, what you get it most likely [blog](http://www.williambrownstreet.net/blog/2013/07/angularjs-my-solution-to-the-ng-repeat-performance-problem/) [posts](https://www.airpair.com/angularjs/posts/angularjs-performance-large-applications) about [fixing performance issues](http://blog.scalyr.com/2013/10/angularjs-1200ms-to-35ms/) or [ways to avoid pitfalls](http://www.alexkras.com/11-tips-to-improve-angularjs-performance/). Theres no hiding the fact that the not-so-secret secret of Angular is that it is slow. Anyone who has ever done a big Angular application or even writing an [`ng-repeat`](https://docs.angularjs.org/api/ng/directive/ngRepeat) inside an `ng-repeat` can attest to it's slowness.
+When you do a Google [search](https://www.google.com/search?q=angular+performance) of these two words together, what you will most likely get are [blog](http://www.williambrownstreet.net/blog/2013/07/angularjs-my-solution-to-the-ng-repeat-performance-problem/) [posts](https://www.airpair.com/angularjs/posts/angularjs-performance-large-applications) about [fixing performance issues](http://blog.scalyr.com/2013/10/angularjs-1200ms-to-35ms/) or [ways to avoid pitfalls](http://www.alexkras.com/11-tips-to-improve-angularjs-performance/). Theres no hiding the fact that the not-so-secret secret of Angular is that it is slow. Anyone who has ever done a big Angular application or even writing an [`ng-repeat`](https://docs.angularjs.org/api/ng/directive/ngRepeat) inside an `ng-repeat` can attest to it's slowness.
 
 ---
 
-A Google search of "angular performance" today leads to a result of a very unique Github project called [ngReact](https://github.com/ngReact/ngReact). ngReact is a project to use [React](https://facebook.github.io/react/) Components in Angular by replacing the view component and keeping the rest of the Angular functionality.
+A Google search of the keywords "angular performance" today produces a link to a Github project called [ngReact](https://github.com/ngReact/ngReact). ngReact is a open source project to use [React](https://facebook.github.io/react/) Components in Angular by replacing the view component and keeping the rest of the Angular functionality.
 
 > Facebook's React library is designed to be used as a view component atop other JavaScript frameworks. 
 > NgReact is a small library providing helpers and showing examples of achieving interoperability between React and Angular.
