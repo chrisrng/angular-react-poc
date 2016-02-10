@@ -55,6 +55,8 @@ Trigger an end mark on the `$timeout` call to mark the end of an Angular render 
 
 Averaging at around `39.07%` increase in performance over 10, 50, and 100 rows of pascal's triangle.
 
+It did however add a cost of around 39KB of code (react and reactdom) when gzipped and minified, along with the framework initialization costs.
+
 ### Angular performance:
 
 ![311.315ms for 100 rows](https://raw.github.com/chrisrng/angular-react-poc/master/images/angular-only.png)
